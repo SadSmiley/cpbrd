@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,QACA,CACI,MAAM,CAAE,OAAO,CACf,uBACA,CACI,MAAM,CAAE,MAAM,CACd,+BACA,CACI,MAAM,CAAE,MAAM,CACd,oCACA,CACI,KAAK,CAAE,IAAI,CACX,gBAAgB,CAAE,OAAO,CACzB,SAAS,CAAE,OAAO,CAClB,KAAK,CAAE,IAAI",
+"sources": ["../sass/landing.scss"],
+"names": [],
+"file": "landing.css"
+}

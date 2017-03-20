@@ -1,0 +1,104 @@
+.report
+{
+    margin: 50px 0;
+    label
+    {
+        color: #2e5d90;
+        font-size: 30.22px;
+        font-weight: 400;
+    }
+    .form-control
+    {
+        box-shadow: none;
+        border-radius: 0;
+        border: 3px solid #476091;
+    }
+    .proponent-label
+    {
+        font-size: 21.75px;
+        font-weight: 400;
+        background-color: #2f4b82;
+        color: #fff;
+        text-align: center;
+        padding: 2.5px;
+    }
+    .proponent-holder
+    {
+        text-align: center;
+        margin-top: 7.5px;
+        margin-bottom: 64px;
+        .holder
+        {
+            display: inline-block;
+            vertical-align: top;
+            margin: 0 15px;
+            .p-label
+            {
+                color: #2e5d90;
+                font-size: 30.22px;
+            }
+            .p-checkbox
+            {
+                
+            }
+        }
+    }
+    .form-control
+    {
+        font-size: 20px;
+    }
+    .form-control[readonly]
+    {
+        background-color: #fff;
+    }
+    input[type="text"].form-control
+    {
+        height: 40px;
+    }
+    textarea.form-control
+    {
+        resize: none;
+    }
+    .status.form-control
+    {
+        height: 100px;
+    }
+    .notes.form-control
+    {
+        height: 300px;
+    }
+    .save
+    {
+        margin-top: 50px;
+        .btn
+        {
+            max-width: 420px;
+            margin: auto;
+            display: block;
+        }
+    }
+    .report-view
+    {
+        text-align: right;
+        margin-top: 75px;
+        .button-holder
+        {
+            display: inline-block;
+            margin: 0 10px;
+            .btn
+            {
+                padding-left: 25px;
+                padding-right: 25px;
+                font-size: 30px;
+            }
+        }
+        .proponent-container
+        {
+            text-align: left;
+            label
+            {    
+                font-size: 25px !important;
+            }
+        }
+    }
+}

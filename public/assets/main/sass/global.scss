@@ -1,0 +1,95 @@
+body, html
+{
+    font-family: "TwCenMT", sans-serif;
+}
+.width-container
+{
+    max-width: 1160px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+header
+{
+    margin-top: 25px;
+    .label
+    {
+        color: #2e5d90;
+        font-size: 28.55px;
+        font-weight: 700;
+    }
+    .header-holder
+    {
+        width: 100%;
+        table-layout: fixed;
+        td
+        {
+            vertical-align: bottom;
+        }
+        .logo
+        {
+            width: 300px;
+            img
+            {
+                width: 100%;
+            }
+        }
+        .text
+        {
+            padding-left: 25px;
+            .title
+            {
+                color: #2e5d90;
+                font-weight: 700;
+                font-size: 48px;
+                line-height: 35px;
+            }
+            .sub
+            {
+                color: #fff;
+                font-size: 41.31px;
+                font-weight: 700;
+                background-color: #2e5d90;
+                line-height: 30px;
+                padding: 15px 10px;
+                margin-top: 10px;
+            }
+        }
+    }
+}
+
+// GLOBAL ELEMENTS
+.btn
+{
+    background: none;
+    background-color: #2f4b82;
+    width: 100%;
+    border-radius: 0;
+    font-size: 45.85px;
+    color: #fff;
+    &:hover, &:active, &:focus
+    {
+        color: #fff;
+    }
+}
+.search-bar
+{
+    table
+    {
+        width: 100%;
+        table-layout: fixed;
+        .form-control
+        {
+            box-shadow: none;
+            border-radius: 0;
+            border: 2px solid #2f4b82;
+            height: 79px;
+            font-size: 45.85px;
+        }
+        .button
+        {
+            width: 200px;
+        }
+    }
+}
