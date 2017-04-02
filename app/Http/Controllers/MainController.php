@@ -4,6 +4,7 @@ use Request;
 use Redirect;
 use DB;
 use Validator;
+use PDF;
 
 class MainController extends Controller
 {
@@ -16,21 +17,21 @@ class MainController extends Controller
 	public function proponent()
 	{
 		$data["page"] = "Proponents";
-		$data["_proponent"] = DB::table("tbl_proponent")->where("archived", 0)->get();
+		$data["_proponent"] = DB::table("proponent")->where("deleted_at", NULL)->get();
 		
 		return view("main.proponent", $data);
 	}
 	public function report($id)
 	{
 		$data["page"] = "Input Page";
-		$data["_proponent"] = DB::table("tbl_proponent")->where("archived", 0)->get();
+		$data["_proponent"] = DB::table("proponent")->where("deleted_at", NULL)->get();
 	
 		if ($id > 0) 
 		{
 			$data["report"] = DB::table("tbl_report")->where("report_id", $id)->first();
 			foreach ($data["_proponent"] as $key => $value) 
 			{
-				$exist = DB::table("rel_report_proponent")->where("report_id", $id)->where("proponent_id", $value->proponent_id)->first();
+				$exist = DB::table("rel_report_proponent")->where("report_id", $id)->where("proponent_id", $value->id)->first();
 				
 				if($exist)
 				{
@@ -102,10 +103,31 @@ class MainController extends Controller
 			return Redirect::to("/");
         }
 	}
+	public function print_proponent($id)
+	{
+		$data["page"] = "Proponent View - Print";
+		$data["proponent"] = DB::table("proponent")->where("id", $id)->first();
+		$agenda = DB::table("rel_report_proponent")->where("proponent_id", $id)
+															->leftJoin('tbl_report', 'rel_report_proponent.report_id', '=', 'tbl_report.report_id')
+															->get();
+		$data["_agenda"] = [];
+		foreach ($agenda as $key => $value) 
+		{
+			if (!isset($data["_agenda"][$value->report_legistative_agenda])) 
+			{
+				$data["_agenda"][$value->report_legistative_agenda] = [];
+			}
+			
+			array_push($data["_agenda"][$value->report_legistative_agenda], $value);
+		};
+
+		$pdf = PDF::loadView('main.proponent_print', $data);
+		return $pdf->download('Print.pdf');
+	}
 	public function proponent_view($id)
 	{
 		$data["page"] = "Proponent View";
-		$data["proponent"] = DB::table("tbl_proponent")->where("proponent_id", $id)->first();
+		$data["proponent"] = DB::table("proponent")->where("id", $id)->first();
 		$agenda = DB::table("rel_report_proponent")->where("proponent_id", $id)
 															->leftJoin('tbl_report', 'rel_report_proponent.report_id', '=', 'tbl_report.report_id')
 															->get();

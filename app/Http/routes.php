@@ -19,3 +19,4 @@ Route::get('/proponent/view/{id}', 'MainController@proponent_view');
 Route::get('/agenda', 'MainController@agenda');
 Route::get('/agenda/view/{id}', 'MainController@view_agenda');
 Route::get('/measure', 'MainController@measure');
+Route::get('/print_proponent/{id}', 'MainController@print_proponent');

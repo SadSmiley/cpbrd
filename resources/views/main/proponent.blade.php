@@ -1,14 +1,24 @@
 @extends("main.layout")
 @section("content")
-<div class="proponent">
-    <div class="proponent-title">CHOOSE ONE FILTER</div>
-    <div class="proponent-list">
-        @foreach($_proponent as $proponent)
-        <div class="holder">
-            <button class="btn" onClick="location.href='/proponent/view/{{ $proponent->proponent_id }}'">{{ $proponent->proponent_name }}</button>
-        </div>
-        @endforeach
-    </div>
+<div class="text-center">
+	<div class="proponent" style="display: inline-block; vertical-align: top; width: 510px; margin-right: 15px;">
+	    <div class="proponent-title">CHOOSE ONE FILTER</div>
+	    <div class="proponent-list">
+	        @foreach($_proponent as $proponent)
+	        <div class="holder">
+	            <button class="btn" onClick="location.href='/proponent/view/{{ $proponent->id }}'">{{ $proponent->proponent_name }}</button>
+	        </div>
+	        @endforeach
+	    </div>
+	</div>
+	<div class="proponent" style="display: inline-block; vertical-align: top; max-width: 200px;">
+		<div class="proponent-title">DOWNLOAD OPTIONS</div>
+		@foreach($_proponent as $proponent)
+		<div class="holder">
+			<div style="padding: 5px 0; font-size: 18px;"><a style="color: #000;" href="/print_proponent/{{ $proponent->id }}?type=shortlist">SHORTLIST</a> <span>|</span> <a style="color: #000;" href="/print_proponent/{{ $proponent->id }}?type=detailed">DETAILED</a></div>
+		</div>	
+		@endforeach
+	</div>
 </div>
 @endsection
 @section("css")

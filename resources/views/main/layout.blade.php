@@ -47,14 +47,21 @@
       <header class="new">
          <div class="clearfix width-container">
             <div class="pull-left">
-               <div class="img"><img src="/assets/main/img/trans-logo.png"></div>
+               <div class="img"><a href="/"><img src="/assets/main/img/trans-logo.png"></a></div>
                <div class="text">
                   <div class="title">CPBRD</div>
                   <div class="sub">CONGRESSIONAL POLICY AND BUDGET RESEARCH DEPARTMENT</div>
                </div>
             </div>
             <div class="pull-right">
-               <div class="side-title">BILLS TRACKING SYSTEM</div>
+               <div class="side-title" style="padding-top: 7px; padding-bottom: 0;">
+                  <div>BILLS TRACKING SYSTEM</div>
+                  <div style="font-weight: 400; letter-spacing: 0;;">
+                     <div style="font-size: 18.37px; display: inline-block;">HOME</div>
+                     <div style="font-size: 18.37px; display: inline-block; margin: 0 7.5px;">CPBRD MAINSITE</div>
+                     <div style="font-size: 18.37px; display: inline-block; border: 1px solid #fff; padding: 0 7.5px;"><a href="/login" style="color: #fff;">LOGIN</a></div>
+                  </div>
+               </div>
             </div>
          </div>
       </header>

@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTblProponent extends Migration
+class CreateRolesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,12 +12,9 @@ class CreateTblProponent extends Migration
      */
     public function up()
     {
-        Schema::create('tbl_proponent', function (Blueprint $table) {
-            $table->increments('proponent_id')->unsigned();
-            $table->string('proponent_name');
-            
-            $table->tinyInteger('archived')->default(0);
-            
+        Schema::create('roles', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('title');
             $table->timestamps();
         });
     }
@@ -29,6 +26,6 @@ class CreateTblProponent extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('roles');
     }
 }

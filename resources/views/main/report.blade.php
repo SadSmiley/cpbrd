@@ -47,7 +47,7 @@
                         <div class="holder">
                             <div class="p-label">{{ $proponent->proponent_name }}</div>
                             <div class="p-checkbox">
-                                <input type="checkbox" value="{{ $proponent->proponent_id }}" name="proponent[]" id="proponent_{{ $proponent->proponent_id }}" class="css-checkbox" /><label for="proponent_{{ $proponent->proponent_id }}" class="css-label radGroup1"></label>
+                                <input type="checkbox" value="{{ $proponent->id }}" name="proponent[]" id="proponent_{{ $proponent->id }}" class="css-checkbox" /><label for="proponent_{{ $proponent->id }}" class="css-label radGroup1"></label>
                             </div>
                         </div>
                        @endforeach
@@ -91,7 +91,7 @@
                                 <div class="col-md-6">
                                     <div class="holder">
                                         <div class="p-checkbox">
-                                            <input disabled {{ $proponent->checked == true ? "checked" : "" }} type="checkbox" value="{{ $proponent->proponent_id }}" name="proponent[]" id="proponent_{{ $proponent->proponent_id }}" class="css-checkbox" /><label for="proponent_{{ $proponent->proponent_id }}" class="css-label radGroup1">{{ $proponent->proponent_name }}</label>
+                                            <input disabled {{ $proponent->checked == true ? "checked" : "" }} type="checkbox" value="{{ $proponent->id }}" name="proponent[]" id="proponent_{{ $proponent->id }}" class="css-checkbox" /><label for="proponent_{{ $proponent->id }}" class="css-label radGroup1">{{ $proponent->proponent_name }}</label>
                                         </div>
                                     </div>
                                 </div>

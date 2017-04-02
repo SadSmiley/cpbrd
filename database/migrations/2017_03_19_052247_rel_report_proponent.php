@@ -26,7 +26,7 @@ class RelReportProponent extends Migration
                   ->onDelete('cascade');
                   
             $table->foreign('proponent_id')
-                  ->references('proponent_id')->on('tbl_proponent')
+                  ->references('id')->on('proponent')
                   ->onDelete('cascade');
         });
     }
