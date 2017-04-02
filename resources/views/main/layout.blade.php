@@ -28,21 +28,37 @@
       <!--[if lt IE 8]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
       <![endif]-->
-      <header>
-         <div class="width-container">
-            <table class="header-holder">
-               <tbody>
-                  <tr>
-                     <td class="logo"><img src="/assets/main/img/logo.png"></td>
-                     <td class="text">
-                        <div class="title">CONGRESSIONAL POLICY </br>AND BUDGET RESEARCH DEPARTMENT</div>
-                        <div class="sub">BILLS TRACKING AND MONITORING</div>
-                     </td>
-                  </tr>
-               </tbody>
-            </table>
+      @if(Request::segment(1))
+      <!--<header class="old">-->
+      <!--   <div class="width-container">-->
+      <!--      <table class="header-holder">-->
+      <!--         <tbody>-->
+      <!--            <tr>-->
+      <!--               <td class="logo"><img src="/assets/main/img/logo.png"></td>-->
+      <!--               <td class="text">-->
+      <!--                  <div class="title">CONGRESSIONAL POLICY </br>AND BUDGET RESEARCH DEPARTMENT</div>-->
+      <!--                  <div class="sub">BILLS TRACKING AND MONITORING</div>-->
+      <!--               </td>-->
+      <!--            </tr>-->
+      <!--         </tbody>-->
+      <!--      </table>-->
+      <!--      </div>-->
+      <!--</header>-->
+      <header class="new">
+         <div class="clearfix width-container">
+            <div class="pull-left">
+               <div class="img"><img src="/assets/main/img/trans-logo.png"></div>
+               <div class="text">
+                  <div class="title">CPBRD</div>
+                  <div class="sub">CONGRESSIONAL POLICY AND BUDGET RESEARCH DEPARTMENT</div>
+               </div>
             </div>
+            <div class="pull-right">
+               <div class="side-title">BILLS TRACKING SYSTEM</div>
+            </div>
+         </div>
       </header>
+      @endif
       
       <div class="width-container">
          @yield("content")

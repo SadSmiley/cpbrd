@@ -53,7 +53,7 @@ class MainController extends Controller
 		$rules['report_author_related_house_bill'] = 'required';
 		$rules['report_significance_related_house_bill'] = 'required';
 		$rules['report_status_related_house_bill'] = 'required';
-		$rules['report_related_senate_bill'] = 'required';
+		$rules['report_author_related_senate_bill'] = 'required';
 		$rules['report_salient_related_senate_bill'] = 'required';
 		$rules['report_significance_related_senate_bill'] = 'required';
 		$rules['report_status_related_senate_bill'] = 'required';
@@ -65,7 +65,7 @@ class MainController extends Controller
 		$insert['report_author_related_house_bill'] = Request::input('report_author_related_house_bill');
 		$insert['report_significance_related_house_bill'] = Request::input('report_significance_related_house_bill');
 		$insert['report_status_related_house_bill'] = Request::input('report_status_related_house_bill');
-		$insert['report_related_senate_bill'] = Request::input('report_related_senate_bill');
+		$insert['report_author_related_senate_bill'] = Request::input('report_author_related_senate_bill');
 		$insert['report_salient_related_senate_bill'] = Request::input('report_salient_related_senate_bill');
 		$insert['report_significance_related_senate_bill'] = Request::input('report_significance_related_senate_bill');
 		$insert['report_status_related_senate_bill'] = Request::input('report_status_related_senate_bill');
@@ -121,5 +121,63 @@ class MainController extends Controller
 		};
 
 		return view("main.proponent_view", $data);
+	}
+	public function agenda()
+	{
+		$data["page"] = "View by Agenda";
+		$agenda = DB::table("tbl_report")->where("archived", 0)
+										 ->get();
+										 
+		$data["_agenda"] = [];
+		foreach ($agenda as $key => $value) 
+		{
+			if (!isset($data["_agenda"][$value->report_legistative_agenda])) 
+			{
+				$data["_agenda"][$value->report_legistative_agenda] = [];
+			}
+			
+			array_push($data["_agenda"][$value->report_legistative_agenda], $value);
+		};
+	
+		return view("main.agenda", $data);
+	}
+	public function view_agenda($name)
+	{
+		$data["page"] = "View by Measures under Agenda";
+		$agenda = DB::table("tbl_report")->where("archived", 0)
+										 ->where("report_legistative_agenda", $name)
+										 ->get();
+										 
+		$data["_agenda"] = [];
+		foreach ($agenda as $key => $value) 
+		{
+			if (!isset($data["_agenda"][$value->report_legistative_agenda])) 
+			{
+				$data["_agenda"][$value->report_legistative_agenda] = [];
+			}
+			
+			array_push($data["_agenda"][$value->report_legistative_agenda], $value);
+		};
+		
+		return view("main.view_agenda", $data);
+	}
+	public function measure()
+	{
+		$data["page"] = "View by Measures";
+		$agenda = DB::table("tbl_report")->where("archived", 0)
+										 ->get();
+										 
+		$data["_agenda"] = [];
+		foreach ($agenda as $key => $value) 
+		{
+			if (!isset($data["_agenda"][$value->report_legistative_agenda])) 
+			{
+				$data["_agenda"][$value->report_legistative_agenda] = [];
+			}
+			
+			array_push($data["_agenda"][$value->report_legistative_agenda], $value);
+		};
+		
+		return view("main.measure", $data);
 	}
 }

@@ -1,18 +1,26 @@
 .proponent
 {
-    margin: 100px 0;
+    max-width: 510px;
+    margin: 50px auto;
     .proponent-title
     {
-        font-size: 40px;
-        font-weight: 700;
-        color: #2e5d90;
+        font-size: 18.37px;
+        font-weight: 400;
+        color: #000000;
         margin-bottom: 25px;
+    }
+    .view-proponent-title
+    {
+        font-size: 21.83px;
+        color: #000000;
+        font-weight: 700;
+        text-align: center;
     }
     .proponent-list
     {
         .holder
         {
-            margin: 25px 0;
+            margin: 15px 0;
         }
     }
     .proponent-list-view
@@ -23,7 +31,12 @@
             margin: 25px 0;
             .name
             {
-                font-size: 35px;
+                font-size: 18.61px;
+                color: #000000;
+                a
+                {
+                    color: #000000;
+                }
             }
             .sub
             {
@@ -31,6 +44,32 @@
                 a
                 {
                     color: #2e5d90;
+                }
+            }
+        }
+    }
+    .view-proponent-list-view
+    {
+        .holder
+        {
+            color: #2e5d90;
+            margin: 25px 0;
+            .name
+            {
+                font-size: 18.61px;
+                color: #000000;
+                a
+                {
+                    color: #000;
+                }
+            }
+            .sub
+            {
+                color: #000000;
+                font-size: 18.61px;
+                a
+                {
+                    color: #000000;
                 }
             }
         }

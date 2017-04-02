@@ -10,7 +10,14 @@ body, html
     margin-right: auto;
     margin-left: auto;
 }
-header
+.view-proponent-title
+{
+    font-size: 21.83px;
+    color: #000000;
+    font-weight: 700;
+    text-align: center;
+}
+.old
 {
     margin-top: 25px;
     .label
@@ -58,6 +65,46 @@ header
         }
     }
 }
+.new
+{
+    background-color: #2f4b82;
+    padding: 10px 0;
+    .img
+    {
+        display: inline-block;
+        vertical-align: bottom;
+    }
+    .text
+    {
+        display: inline-block;
+        vertical-align: bottom;
+        color: #fff;
+        padding-left: 10px;
+        .title
+        {
+            font-size: 32.26px;
+            font-weight: 700;
+            line-height: 30px;
+        }
+        .sub
+        {
+            font-size: 15.64px;
+            font-weight: 700;
+            line-height: 15px;
+            padding-bottom: 7.5px;
+            letter-spacing: 1px;
+        }
+    }
+    .side-title
+    {
+        font-size: 23.46px;
+        font-weight: 700;
+        color: #fff;
+        border-left: 2px solid #fff;
+        padding: 20px 15px;
+        letter-spacing: 2px;
+    }
+}
 
 // GLOBAL ELEMENTS
 .btn
@@ -66,7 +113,7 @@ header
     background-color: #2f4b82;
     width: 100%;
     border-radius: 0;
-    font-size: 45.85px;
+    font-size: 18.16px;
     color: #fff;
     &:hover, &:active, &:focus
     {
@@ -84,12 +131,12 @@ header
             box-shadow: none;
             border-radius: 0;
             border: 2px solid #2f4b82;
-            height: 79px;
-            font-size: 45.85px;
+            height: 39px;
+            font-size: 25px;
         }
         .button
         {
-            width: 200px;
+            width: 100px;
         }
     }
 }

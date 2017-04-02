@@ -1,18 +1,54 @@
 .landing
 {
     margin: 100px 0;
+    .logo-landing
+    {
+        text-align: center;
+        img
+        {
+            max-width: 470px;
+        }
+        .sub-holder
+        {
+            .sub
+            {
+                color: #fff;
+                font-size: 21.87px;
+                font-weight: 700;
+                text-align: center;
+                letter-spacing: 3px;
+                background-color: #2e5d90;
+                line-height: 30px;
+                padding: 10px 25px;
+                margin-top: 10px;
+                display: inline-block;
+                margin-top: 15px;
+                @media screen and (min-width: 470px)
+                {
+                    width: 470px;
+                }
+            }
+        }
+    }
+    .input-landing
+    {
+        @media screen and (min-width: 991px)
+        {
+           margin-top: 57px; 
+        }
+    }
     .button-holder
     {
         margin: 25px 0;
         .holder
         {
-            margin: 25px 0;
+            margin: 15px 0;
             .btn
             {
                 width: 100%;
                 background-color: #2f4b82;
-                font-size: 45.85px;
                 color: #fff;
+                font-size: 22.02px;
             }
         }
     }

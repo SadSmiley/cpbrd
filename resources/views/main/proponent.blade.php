@@ -1,7 +1,7 @@
 @extends("main.layout")
 @section("content")
 <div class="proponent">
-    <div class="proponent-title">SELECT ONE PROPONENT</div>
+    <div class="proponent-title">CHOOSE ONE FILTER</div>
     <div class="proponent-list">
         @foreach($_proponent as $proponent)
         <div class="holder">

@@ -101,8 +101,7 @@
                     </div>
                     <div class="pull-right">
                         <div class="button-holder"><button type="button" class="btn">PRINT</button></div>
-                        <div class="button-holder"><button type="button" class="btn">NEXT</button></div>
-                        <div class="button-holder"><button type="button" class="btn" onClick="location.href='{{ URL::previous() }}'">BACK</button></div>
+                        <div class="button-holder"><button type="button" class="btn" onClick="location.href='{{ URL::previous() }}'">GO BACK TO LIST</button></div>
                     </div>
                 </div>
             </div>
