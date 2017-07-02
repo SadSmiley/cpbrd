@@ -14,8 +14,8 @@
 	<div class="proponent" style="display: inline-block; vertical-align: top; max-width: 200px;">
 		<div class="proponent-title">DOWNLOAD OPTIONS</div>
 		@foreach($_proponent as $proponent)
-		<div class="holder">
-			<div style="padding: 5px 0; font-size: 18px;"><a style="color: #000;" href="/print_proponent/{{ $proponent->id }}?type=shortlist">SHORTLIST</a> <span>|</span> <a style="color: #000;" href="/print_proponent/{{ $proponent->id }}?type=detailed">DETAILED</a></div>
+		<div class="holder" style="margin: 20px 0;">
+			<div style="padding: 5px 0; font-size: 16px;"><a style="color: #000;" href="/print_proponent/{{ $proponent->id }}?type=shortlist">SHORTLIST</a> <span>|</span> <a style="color: #000;" href="/print_proponent/{{ $proponent->id }}?type=detailed">DETAILED</a></div>
 		</div>	
 		@endforeach
 	</div>

@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'MainController@index');
+Route::get('/login', 'MainController@login');
 Route::get('/report/{id}', 'MainController@report');
 Route::post('/report/{id}', 'MainController@submit_report');
 Route::get('/proponent', 'MainController@proponent');
@@ -20,3 +21,4 @@ Route::get('/agenda', 'MainController@agenda');
 Route::get('/agenda/view/{id}', 'MainController@view_agenda');
 Route::get('/measure', 'MainController@measure');
 Route::get('/print_proponent/{id}', 'MainController@print_proponent');
+Route::get('/search', 'MainController@search_result');

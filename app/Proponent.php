@@ -19,7 +19,10 @@ class Proponent extends Model {
 
     protected $table    = 'proponent';
     
-    protected $fillable = ['proponent_name'];
+    protected $fillable = [
+          'proponent_name',
+          'proponent_alias'
+    ];
     
 
     public static function boot()

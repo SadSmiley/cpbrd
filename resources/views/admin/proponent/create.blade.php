@@ -22,7 +22,13 @@
     {!! Form::label('proponent_name', 'Proponent Name*', array('class'=>'col-md-2 control-label')) !!}
     <div class="col-sm-10">
         {!! Form::text('proponent_name', old('proponent_name'), array('class'=>'form-control')) !!}
-        
+    </div>
+</div>
+
+<div class="form-group">
+    {!! Form::label('proponent_alias', 'Proponent Alias*', array('class'=>'col-md-2 control-label')) !!}
+    <div class="col-sm-10">
+        {!! Form::text('proponent_alias', old('proponent_alias'), array('class'=>'form-control')) !!}
     </div>
 </div>
 

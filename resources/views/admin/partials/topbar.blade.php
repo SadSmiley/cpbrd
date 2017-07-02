@@ -3,7 +3,7 @@
         <div class="page-header-inner">
             <div class="navbar-header">
                 <a href="{{ url(config('quickadmin.homeRoute')) }}" class="navbar-brand">
-                    QuickAdmin
+                CPBRD Admin Panel
                 </a>
             </div>
             <a href="javascript:;"

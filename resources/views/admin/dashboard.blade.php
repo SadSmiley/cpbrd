@@ -2,6 +2,4 @@
 
 @section('content')
 
-    Welcome to your project dashboard
-
 @endsection

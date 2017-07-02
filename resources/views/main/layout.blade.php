@@ -56,9 +56,9 @@
             <div class="pull-right">
                <div class="side-title" style="padding-top: 7px; padding-bottom: 0;">
                   <div>BILLS TRACKING SYSTEM</div>
-                  <div style="font-weight: 400; letter-spacing: 0;;">
-                     <div style="font-size: 18.37px; display: inline-block;">HOME</div>
-                     <div style="font-size: 18.37px; display: inline-block; margin: 0 7.5px;">CPBRD MAINSITE</div>
+                  <div style="font-weight: 400; letter-spacing: 0;">
+                     <div style="font-size: 18.37px; display: inline-block;"><a style="color: #fff;" href="/">HOME</a></div>
+                     <div style="font-size: 18.37px; display: inline-block; margin: 0 7.5px;"><a style="color: #fff;" href="/">CPBRD MAINSITE</a></div>
                      <div style="font-size: 18.37px; display: inline-block; border: 1px solid #fff; padding: 0 7.5px;"><a href="/login" style="color: #fff;">LOGIN</a></div>
                   </div>
                </div>

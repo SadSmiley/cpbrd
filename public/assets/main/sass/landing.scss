@@ -1,55 +1,83 @@
+.row > div
+{
+    @media screen and (min-width: 768px)
+    {
+        &:first-child
+        {
+            padding-right: 100px;
+        }
+        &:last-child
+        {
+            border-left: 2px solid #2F4A84;
+        }
+    }
+}
 .landing
 {
-    margin: 100px 0;
-    .logo-landing
+    margin: 25px 0;
+    .top-label-title
+    {
+        color: #fff;
+        background-color: #2F4A84;
+        font-size: 16px;
+        text-align: center;
+        display: inline-block;
+        padding: 5px 25px;
+        letter-spacing: 1px;
+    }
+    .label-title
+    {
+        margin-top: 75px;
+        color: #2F4A84;
+        font-weight: 700;
+        font-size: 16px;
+        letter-spacing: 1px;
+    }
+    .label-sub
+    {
+        font-size: 16px;
+        color: #2F4A84;
+    }
+    form
+    {
+        .form-group
+        {
+            margin: 10px 0;
+            .form-control
+            {
+                border: 2px solid #2F4A84;
+                border-radius: 0;
+                box-shadow: none;
+            }
+        }
+    }
+    .logo
     {
         text-align: center;
         img
         {
-            max-width: 470px;
-        }
-        .sub-holder
-        {
-            .sub
-            {
-                color: #fff;
-                font-size: 21.87px;
-                font-weight: 700;
-                text-align: center;
-                letter-spacing: 3px;
-                background-color: #2e5d90;
-                line-height: 30px;
-                padding: 10px 25px;
-                margin-top: 10px;
-                display: inline-block;
-                margin-top: 15px;
-                @media screen and (min-width: 470px)
-                {
-                    width: 470px;
-                }
-            }
+            max-height: 200px;
         }
     }
-    .input-landing
+    .nav-holder
     {
-        @media screen and (min-width: 991px)
-        {
-           margin-top: 57px; 
-        }
-    }
-    .button-holder
-    {
-        margin: 25px 0;
+        text-align: center;
+        margin: 30.5px 0;
         .holder
         {
-            margin: 15px 0;
-            .btn
+            margin: 15px auto;
+            a
             {
-                width: 100%;
-                background-color: #2f4b82;
-                color: #fff;
-                font-size: 22.02px;
+                font-weight: 700;
+                color: #2F4A84;
+                font-size: 16px;
             }
         }
     }
+}
+
+.btn
+{
+    display: inline-block;
+    width: auto;
 }

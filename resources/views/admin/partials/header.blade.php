@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>
-        QuickAdmin
+        CPBRD Admin Panel
     </title>
 
     <meta http-equiv="X-UA-Compatible"

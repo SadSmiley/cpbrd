@@ -123,10 +123,10 @@
             @foreach($_agenda as $key => $agenda)
             <?php $ctr++;  ?>
             <div class="holder">
-                <div class="name"><a href="/agenda/view/{{ $key }}">{{ $ctr }}. {{ $key }}</a></div>
+                <div class="name"><a href="{{ URL::to('/agenda/view/". $key ."') }}">{{ $ctr }}. {{ $key }}</a></div>
                 <ul class="sub">
                     @foreach($agenda as $measures)
-                    <li><a href="/report/{{ $measures->report_id }}">{{ $measures->report_measures }}</a></li>
+                    <li><a href="{{ URL::to('/report/". $measures->report_id ."') }}">{{ $measures->report_measures }}</a></li>
                     @endforeach
                 </ul>
             </div>

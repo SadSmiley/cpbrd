@@ -17,7 +17,7 @@
                             {!! Form::checkbox('delete_all',1,false,['class' => 'mass']) !!}
                         </th>
                         <th>Proponent Name</th>
-
+                        <th>Proponent Alias</th>
                         <th>&nbsp;</th>
                     </tr>
                 </thead>
@@ -29,7 +29,7 @@
                                 {!! Form::checkbox('del-'.$row->id,1,false,['class' => 'single','data-id'=> $row->id]) !!}
                             </td>
                             <td>{{ $row->proponent_name }}</td>
-
+                            <td>{{ $row->proponent_alias }}</td>
                             <td>
                                 {!! link_to_route('admin.proponent.edit', 'Edit', array($row->id), array('class' => 'btn btn-xs btn-info')) !!}
                                 {!! Form::open(array('style' => 'display: inline-block;', 'method' => 'DELETE', 'onsubmit' => 'return confirm(\'Confirm deletion\');',  'route' => array('admin.proponent.destroy', $row->id))) !!}

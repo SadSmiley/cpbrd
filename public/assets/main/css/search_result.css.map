@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,OACA,CACI,MAAM,CAAE,MAAM,CACd,qBACA,CACI,KAAK,CAAE,OAAO,CACd,SAAS,CAAE,IAAI,CACf,UAAU,CAAE,MAAM,CAClB,aAAa,CAAE,IAAI",
+"sources": ["../sass/search_result.scss"],
+"names": [],
+"file": "search_result.css"
+}

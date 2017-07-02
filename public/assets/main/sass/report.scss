@@ -1,11 +1,17 @@
 .report
 {
     margin: 50px 0;
+    .title
+    {
+        color: #2e5d90;
+        font-size: 25px;
+    }
     label
     {
         color: #2e5d90;
-        font-size: 30.22px;
+        font-size: 18px;
         font-weight: 400;
+        font-style: italic;
     }
     .form-control
     {
@@ -15,7 +21,7 @@
     }
     .proponent-label
     {
-        font-size: 21.75px;
+        font-size: 16px;
         font-weight: 400;
         background-color: #2f4b82;
         color: #fff;
@@ -24,9 +30,9 @@
     }
     .proponent-holder
     {
-        text-align: center;
+        text-align: left;
         margin-top: 7.5px;
-        margin-bottom: 64px;
+        margin-bottom: 15px;
         .holder
         {
             display: inline-block;
@@ -35,17 +41,25 @@
             .p-label
             {
                 color: #2e5d90;
-                font-size: 30.22px;
+                font-size: 20px;
+                text-align: center;
+                display: inline-block;
             }
             .p-checkbox
             {
-                
+                text-align: center;
+                display: inline-block;
+                transform: scale(0.7);
+                input[type=checkbox].css-checkbox + label.css-label, input[type=checkbox].css-checkbox + label.css-label.clr
+                {
+                    padding-left: 50px;
+                }
             }
         }
     }
     .form-control
     {
-        font-size: 20px;
+        font-size: 16px;
     }
     .form-control[readonly]
     {
@@ -89,7 +103,7 @@
             {
                 padding-left: 25px;
                 padding-right: 25px;
-                font-size: 30px;
+                font-size: 18px;
             }
         }
         .proponent-container
@@ -97,8 +111,70 @@
             text-align: left;
             label
             {    
-                font-size: 25px !important;
+                font-size: 16px !important;
             }
         }
     }
+    
+    .monitoring-container
+    {
+        border-top: 1px dotted #2e5d90;
+    }
+    
+    .opinion-holder
+    {
+        .holder
+        {
+            margin-top: 15px;
+            &:first-child
+            {
+                margin: 0;
+            }
+        }
+    }
+    .features-holder
+    {
+        .holder
+        {
+            margin-top: 15px;
+            &:first-child
+            {
+                margin: 0;
+            }
+        }
+    }
+}
+
+.sebu
+{
+    width: auto;
+    display: inline-block;
+    padding: 7.5px 35px;
+}
+
+.footnote
+{
+    font-size: 16px;
+    color: #2f4b82;
+    font-style: italic;
+    margin-top: 7.5px;
+}
+
+.related-bill-container
+{
+    .holder
+    {
+        margin-bottom: 15px;
+        &:last-child
+        {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.chosen-choices
+{
+    box-shadow: none;
+    border-radius: 0;
+    border: 3px solid #476091;
 }

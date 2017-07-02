@@ -5,14 +5,27 @@ use Redirect;
 use DB;
 use Validator;
 use PDF;
+use Session;
+use Input;
 
 class MainController extends Controller
 {
+	function __construct()
+	{
+		$user = Session::get("user");
+		$this->user = $user;
+	}
 	public function index()
 	{
 		$data["page"] = "Landing Page";
 		
 		return view("main.landing", $data);
+	}
+	public function login()
+	{
+		$data["page"] = "Login Page";
+		
+		return view("main.login", $data);
 	}
 	public function proponent()
 	{
@@ -25,52 +38,35 @@ class MainController extends Controller
 	{
 		$data["page"] = "Input Page";
 		$data["_proponent"] = DB::table("proponent")->where("deleted_at", NULL)->get();
-	
-		if ($id > 0) 
+		$data["_monitoring"] = DB::table("monitoring")->where("deleted_at", NULL)->get();
+		$data["_naturemeasure"] = DB::table("naturemeasure")->where("deleted_at", NULL)->get();
+		$data["_committeebill"] = DB::table("committeebill")->where("deleted_at", NULL)->get();
+
+		if ($id > 0)
 		{
-			$data["report"] = DB::table("tbl_report")->where("report_id", $id)->first();
-			foreach ($data["_proponent"] as $key => $value) 
-			{
-				$exist = DB::table("rel_report_proponent")->where("report_id", $id)->where("proponent_id", $value->id)->first();
-				
-				if($exist)
-				{
-					$data["_proponent"][$key]->checked = true;
-				}
-				else
-				{
-					$data["_proponent"][$key]->checked = false;
-				}
-			}
+			$data["_report"] = DB::table("tbl_new_report")->where("report_id", $id)->first();
 		}
 		
 		return view("main.report", $data);
 	}
 	public function submit_report()
 	{
-		$rules['report_legistative_agenda'] = 'required';
-		$rules['report_measures'] = 'required';
-		$rules['report_salient_related_house_bill'] = 'required';
-		$rules['report_author_related_house_bill'] = 'required';
-		$rules['report_significance_related_house_bill'] = 'required';
-		$rules['report_status_related_house_bill'] = 'required';
-		$rules['report_author_related_senate_bill'] = 'required';
-		$rules['report_salient_related_senate_bill'] = 'required';
-		$rules['report_significance_related_senate_bill'] = 'required';
-		$rules['report_status_related_senate_bill'] = 'required';
-		$rules['report_notes'] = 'required';
-		
-		$insert['report_legistative_agenda'] = Request::input('report_legistative_agenda');
-		$insert['report_measures'] = Request::input('report_measures');
-		$insert['report_salient_related_house_bill'] = Request::input('report_salient_related_house_bill');
-		$insert['report_author_related_house_bill'] = Request::input('report_author_related_house_bill');
-		$insert['report_significance_related_house_bill'] = Request::input('report_significance_related_house_bill');
-		$insert['report_status_related_house_bill'] = Request::input('report_status_related_house_bill');
-		$insert['report_author_related_senate_bill'] = Request::input('report_author_related_senate_bill');
-		$insert['report_salient_related_senate_bill'] = Request::input('report_salient_related_senate_bill');
-		$insert['report_significance_related_senate_bill'] = Request::input('report_significance_related_senate_bill');
-		$insert['report_status_related_senate_bill'] = Request::input('report_status_related_senate_bill');
-		$insert['report_notes'] = Request::input('report_notes');
+		$rules['title_measure'] = 'required';
+		$insert['title_measure'] = Request::input('title_measure');
+		$rules['background'] = 'required';
+		$insert['background'] = Request::input('background');
+		$rules['opinion'] = 'required';
+		$insert['opinion'] = serialize(Request::input('opinion'));
+		$rules['brief_description'] = 'required';
+		$insert['brief_description'] = Request::input('brief_description');
+		$rules['features'] = 'required';
+		$insert['features'] = serialize(Request::input('features'));
+		$rules['bill'] = 'required';
+		$insert['bill'] = serialize(Request::input('bill'));
+		$rules['status'] = 'required';
+		$insert['status'] = Request::input('status');
+
+		$chart = Input::file("chart");
 		
 		$validator = Validator::make($insert, $rules);
 
@@ -82,8 +78,9 @@ class MainController extends Controller
         }	
         else
         {
+        	dd(Request::input());
         	// INSERT 
-        	$report_id = DB::table("tbl_report")->insertGetId($insert);
+        	$report_id = DB::table("tbl_new_report")->insertGetId($insert);
         	// GET PROPONENT
         	$proponent = Request::input('proponent');
 	        // CHECK PROPONENT
@@ -201,5 +198,10 @@ class MainController extends Controller
 		};
 		
 		return view("main.measure", $data);
+	}
+	public function search_result()
+	{
+		$data["page"] = "Search Result";
+		return view("main.search_result", $data);
 	}
 }
